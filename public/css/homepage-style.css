@@ -1,0 +1,24 @@
+body {
+    text-align: center;
+    font-family: "Gill Sans", sans-serif;
+    background-image: url('https://th.bing.com/th/id/R89f5c83bfe3a8fd32a9b2336a6cc66bf?rik=IDKPP3qU1a1Gmg&riu=http%3a%2f%2fwww.publicdomainpictures.net%2fpictures%2f30000%2fvelka%2ffilm-background-1334067869u9d.jpg&ehk=t8eP8uU3ttnAuyH8dryVlkhDQdcuiwtIw48Cnol2OkY%3d&risl=&pid=ImgRaw');
+}
+
+#movie_title {
+    width: 400px;
+    height: 40px;
+    align-items: center;
+}
+
+.homepage-form {
+    padding: 20px;
+}
+
+div .input {
+    padding: 20px;
+}
+
+label {
+    padding: 20px;
+    font-size: 30px;
+}

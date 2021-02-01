@@ -1,0 +1,16 @@
+<%- include('./partials/header.ejs')%>
+        <div>
+            <form action="/results" method="GET" class="homepage-form">
+                <div class = "input">
+                    <label for="movie_title">Enter the title of the movie you want to search : </label>
+                    <br>
+                    <input type="text" name="title" id="movie_title" placeholder="Title Of Movie" required>
+                </div>
+
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <input type="submit" class="btn btn-success" style="width: 200px; margin-left: 250px;">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

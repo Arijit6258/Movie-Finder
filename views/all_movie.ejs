@@ -1,0 +1,31 @@
+<%- include('./partials/result_header')%>
+<div class="container viewPage">
+    <h1 style="color: brown;">Search Results are!</h1>
+    <div class="row">
+      <% movie_list["Search"].forEach(function(movie) {%>
+      <div
+        class="card px-2 py-2"
+        style="
+          width: 300px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
+        "
+      >
+        <% let source_poster='';
+            if (movie["Poster"] != 'N/A') {
+                source_poster=movie['Poster'];
+            } else {
+                source_poster='https://netflixroulette.files.wordpress.com/2013/01/image-not-found.gif';
+            }
+        %>
+        <img class="card-img-top" src="<%=source_poster%>" alt="Image Not Found" />
+        <div class="card-body">
+          <h4 class="card-title"><%=movie["Title"]%></h4>
+          <h5 class="card-text">Type : <%=movie["Type"]%></h5>
+          <a href="/results/<%=movie["imdbID"]%>" class="btn btn-primary">Know More</a>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>

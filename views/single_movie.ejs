@@ -1,0 +1,54 @@
+<%- include('./partials/result_header')%>
+    
+        <% let source_poster='';
+            if (movie["Poster"] != 'N/A') {
+                source_poster=movie['Poster'];
+            } else {
+                source_poster='https://netflixroulette.files.wordpress.com/2013/01/image-not-found.gif';
+            }
+        %> 
+        
+        <div class="card text-center">
+            <div class="card-header">
+              <h1>Title : <%=movie['Title']%></h1>
+            </div>
+            <div class="card-body" style="height: max-content">
+                <div style="width: 300px; float: left">
+                    <img class="card-img-top"  src= <%=source_poster%>/>
+                    <div style="padding-top: 40px; padding-bottom: 40px;">
+                        <%movie['Ratings'].forEach(function(object) {%>
+                            <h5><b>Source</b> : <%=object['Source']%></h5>  
+                            <h5><b>Rating</b> = <%=object['Value']%></h5>
+                            <br>  
+                        <%})%>
+                    </div>
+                </div>
+             
+              <div id='movie-info' style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                <table class="table table-bordered border-primary" style="width: 1000px; margin-left: 350px;">
+                    <thead>
+                      <tr>
+                        <th scope="col">Key</th>
+                        <th scope="col">Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <%for(const key in movie) {%>
+                            <%if (key === 'Poster' || key == 'Title' || movie[key] === 'N/A' || key == 'imdbID' || key == 'Response') {
+                                continue;
+                            } else if (key !== 'Ratings') {%>
+                            <tr>
+                                <td><%=key%></td>
+                                <td><%=movie[key]%></td>
+                              </tr>
+                            <%}
+                        }%>
+                    </tbody>
+                  </table>
+              </div>
+
+            </div>
+          </div>
+
+    </body>
+</html>
