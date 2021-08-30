@@ -65,7 +65,7 @@ app.get("*", (req, res)=>{
 });
 
 // Start server
-//console.log(process.env.PORT)
+console.log(process.env.PORT)
 app.listen(process.env.PORT, ()=>{
     console.log('Server started at port number :' , process.env.PORT);
 });
